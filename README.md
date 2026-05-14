@@ -1,33 +1,72 @@
-# Legal Command Center Dashboard
+# Legal Command Center
 
-Premium internal Legal Operations dashboard built with React + TypeScript + Vite + Tailwind + Framer Motion + Recharts + Zustand.
+Premium legal operations dashboard for matter tracking, document validation, workflow visibility, analytics, and stakeholder-ready presentation views.
 
-## Setup
+## Product Focus
+
+Legal Command Center is designed as an internal legal-tech workspace for teams that need a clear operating layer across active matters, documents, risk signals, validation checklists, and executive reporting.
+
+## Preview
+
+![Legal Command Center dashboard overview](docs/assets/dashboard-overview.png)
+
+Mobile smoke check:
+
+![Legal Command Center mobile dashboard](docs/assets/dashboard-mobile.png)
+
+## Core Features
+
+- Executive overview with legal KPIs
+- Legal matter mapping and status indicators
+- Workflow center for operational tracking
+- Validation center for document and compliance checks
+- Presentation builder and presentation mode
+- Documents library
+- Analytics and reporting views
+- Settings and preset surfaces
+- Matter drawer for detail inspection
+- Centralized typed store and realistic mock data
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Zustand
+- Framer Motion
+- Recharts
+- Lucide React
+
+## Architecture
+
+- `src/App.tsx`: app shell, active view composition, transitions
+- `src/app/router`: route/view definitions
+- `src/components/layout`: sidebar and topbar
+- `src/components/legal`: legal domain UI components
+- `src/components/charts`: reusable reporting charts
+- `src/components/shared`: reusable UI primitives
+- `src/pages`: product modules
+- `src/store`: centralized Zustand state
+- `src/types`: legal domain model definitions
+- `src/data`: realistic mock data
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build for production:
+## Useful Commands
 
 ```bash
+npm run lint
 npm run build
 npm run preview
 ```
 
-## Component map
-
-- `src/App.tsx`: app shell, section transitions, route-level composition.
-- `src/components/layout`: sidebar + sticky top bar.
-- `src/components/legal`: legal cards and detail drawer.
-- `src/components/charts`: reusable chart blocks.
-- `src/pages`: core product sections (Overview, Mapping, Workflow, Validation, Presentation Builder, Presentation Mode, Documents, Analytics, Settings).
-- `src/types/legal.ts`: legal domain models.
-- `src/data/mockData.ts`: realistic mock data for matters, docs, validation checklists, and decks.
-- `src/store/useLegalStore.ts`: local state and interactions.
-
-## Product modules implemented
+## Product Modules
 
 1. Dashboard Overview
 2. Legal Mapping
@@ -36,10 +75,20 @@ npm run preview
 5. Presentation Builder
 6. Stakeholder Presentation Mode
 7. Documents Library
-8. Analytics & Reports
-9. Settings / Presets
+8. Analytics and Reports
+9. Settings and Presets
 
-## Notes
+## Current Status
 
-- Architecture is API-ready with typed domain boundaries and centralized store.
-- Presentation export (PDF/PPT) intentionally staged for future integration.
+This repository is a standalone extraction candidate from the previous `Bro` workspace. It is suitable as a strong legal-tech portfolio base, but build, lint, and browser smoke testing still need to be completed before public promotion.
+
+See `docs/REPOSITORY_STATUS.md` for the validation checklist.
+
+## Roadmap
+
+- Add API integration layer for real matters, documents, and validation events
+- Add authentication, roles, and audit logging
+- Add import/export workflows for documents and reports
+- Add PDF/PPT export for stakeholder presentations
+- Add advanced filters, search, saved views, and bulk actions
+- Add test coverage for state transitions and high-risk UI flows
